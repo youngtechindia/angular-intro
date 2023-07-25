@@ -10,6 +10,7 @@ import { ServerComponent } from './server/server.component';
 import { ItemslistComponent } from './itemslist/itemslist.component';
 import { HeroComponent } from './hero/hero.component';
 import { ElementcolorDirective } from './directives/elementcolor.directive';
+import { SampleService } from './service/sample.sevice';
 
 @NgModule({
   declarations: [

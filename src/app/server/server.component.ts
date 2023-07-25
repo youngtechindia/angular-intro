@@ -1,11 +1,13 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { LoggerService } from '../logger.service';
+import { SampleService } from '../service/sample.sevice';
 
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation:ViewEncapsulation.None,
+   providers:[SampleService]
 })
 
 export class ServerComponent {
@@ -18,8 +20,10 @@ serverObj = {name:"hello",id:1};
 // @ViewChild('serverName') myServerName!:ElementRef;
 
 // @ViewChild('serverName1') myServerName1!:ElementRef;
-constructor(private logService:LoggerService){
+constructor(private logService:LoggerService,private sampleServce:SampleService){
  
+  console.log("in server>>>>>> "+this.sampleServce.getData());
+
 }
 
   addServer(){

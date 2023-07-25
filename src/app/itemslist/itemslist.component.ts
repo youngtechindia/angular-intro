@@ -8,12 +8,13 @@ import { AfterContentChecked, AfterContentInit, AfterViewInit, Component, DoChec
   SimpleChanges, 
   ViewEncapsulation } from '@angular/core';
 import { LoggerService } from '../logger.service';
+import { SampleService } from '../service/sample.sevice';
 
 @Component({
   selector: 'app-itemslist',
   templateUrl: './itemslist.component.html',
   styleUrls: ['./itemslist.component.css'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation:ViewEncapsulation.None,
 })
 export class ItemslistComponent implements OnInit,OnChanges,DoCheck,AfterContentInit, AfterContentChecked,AfterViewInit,OnDestroy {
  @Input() servercontent:{name:string,id:number} = {name:'',id:0};
@@ -21,8 +22,9 @@ export class ItemslistComponent implements OnInit,OnChanges,DoCheck,AfterContent
 
 @Output() removeServer  = new EventEmitter<number>();
 
-constructor(private logService:LoggerService){
+constructor(private logService:LoggerService,private sampleService:SampleService){
 console.log("constructor Caled!");
+console.log("initems List >>>>>>>>>> "+this.sampleService.getData())
 }
 
 
