@@ -1,0 +1,44 @@
+<input type="text" [(ngModel)]="serverName" />
+<button (click)="addServer()">Add server</button>
+
+<!-- <input type="text" #serverName /> -->
+<!-- <div #mydiv>content</div>
+
+<button (click)="addServer()">Add server</button> -->
+
+<h3 [ngStyle]="{ color: getColor() }">Servers</h3>
+
+<p *ngIf="servers.length > 0; else noServer">Severs Available</p>
+
+<!-- <p *ngIf="servers.length === 0">No Severs Available</p> -->
+
+<ng-template #noServer>
+  <p>No Severs Available</p>
+</ng-template>
+
+<!-- <ul>
+  <li *ngFor="let server of servers">{{ server.id + 1 }}) {{ server.name }}</li>
+</ul> -->
+<ul>
+  <app-itemslist
+    *ngFor="let server of servers"
+    [servercontent]="server"
+    [addStar]="true"
+    (removeServer)="removeItem($event)"
+    class="mycolor"
+  >
+  </app-itemslist>
+</ul>
+<hr />
+
+<!-- <section>
+  <app-itemslist [servercontent]="serverObj">
+    <div>
+      <h3>Hint</h3>
+      <p>hint text</p>
+    </div>
+  </app-itemslist>
+</section> -->
+
+<p class="item-background">Test View encapsulation</p>
+<h2 class="item-background">Test View encapsulation</h2>
