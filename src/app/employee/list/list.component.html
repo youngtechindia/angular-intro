@@ -1,0 +1,22 @@
+<table id="employees">
+  <tr *ngIf="employeesList.length > 0">
+    <th>Name</th>
+    <th>Age</th>
+    <th>City</th>
+
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let employee of employeesList">
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.age }}</td>
+    <td>{{ employee.city }}</td>
+    <td>{{ employee.description }}</td>
+    <td>
+      <button>Edit</button>
+      <button style="margin-left: 5px" (click)="removeRow(employee)">
+        Delete
+      </button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,27 @@
+<form>
+  <input
+    type="text"
+    placeholder="Enter Name"
+    [ngModelOptions]="{ standalone: true }"
+    [(ngModel)]="employeeName"
+  />
+  <input
+    type="number"
+    placeholder="Enter Age"
+    [ngModelOptions]="{ standalone: true }"
+    [(ngModel)]="employeeAge"
+  />
+  <input
+    type="text"
+    placeholder="Enter City"
+    [ngModelOptions]="{ standalone: true }"
+    [(ngModel)]="employeeCity"
+  />
+  <input
+    type="text"
+    placeholder="Enter Descrption"
+    [(ngModel)]="employeeDescription"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <button class="primary" (click)="addEmployee()">Submit</button>
+</form>

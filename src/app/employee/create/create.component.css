@@ -1,0 +1,14 @@
+input {
+  display: block;
+  padding: 5px;
+  margin: 10px;
+}
+
+button.primary {
+  padding: 5px;
+  margin: 10px;
+  color: #fff;
+  background-color: rgb(131, 157, 244);
+  border: 1 px solid rgb(131, 157, 244);
+  border-radius: 5px;
+}

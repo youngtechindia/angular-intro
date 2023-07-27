@@ -11,6 +11,9 @@ import { ItemslistComponent } from './itemslist/itemslist.component';
 import { HeroComponent } from './hero/hero.component';
 import { ElementcolorDirective } from './directives/elementcolor.directive';
 import { SampleService } from './service/sample.sevice';
+import { EmployeeComponent } from './employee/employee.component';
+import { CreateComponent } from './employee/create/create.component';
+import { ListComponent } from './employee/list/list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { SampleService } from './service/sample.sevice';
     ServerComponent,
     ItemslistComponent,
     HeroComponent,
-    ElementcolorDirective
+    ElementcolorDirective,
+    EmployeeComponent,
+    CreateComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
