@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, createComponent } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
- import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +14,28 @@ import { SampleService } from './service/sample.sevice';
 import { EmployeeComponent } from './employee/employee.component';
 import { CreateComponent } from './employee/create/create.component';
 import { ListComponent } from './employee/list/list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { NopageComponent } from './nopage/nopage.component';
 
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: WishComponent,
+  },
+  {
+    path: 'addEmployee',
+    component: CreateComponent,
+  },
+  {
+    path: 'listEmployee/:id',
+    component: ListComponent,
+  },
+  {
+    path: '**',
+    component: NopageComponent,
+  },
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +47,17 @@ import { ListComponent } from './employee/list/list.component';
     ElementcolorDirective,
     EmployeeComponent,
     CreateComponent,
-    ListComponent
+    ListComponent,
+    NavbarComponent,
+    NopageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

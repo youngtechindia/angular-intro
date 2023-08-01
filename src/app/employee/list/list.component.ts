@@ -1,5 +1,6 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -8,10 +9,28 @@ import { EmployeeService } from '../employee.service';
 })
 export class ListComponent implements OnInit, DoCheck {
   employeesList: any[] = [];
-  constructor(private empService: EmployeeService) {}
+  constructor(
+    private empService: EmployeeService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.employeesList = this.empService.getEmployees();
+
+    //console.log(this.route.snapshot.params['id']);
+
+    console.log(this.route.snapshot.queryParams);
+
+    /*
+{
+  urlSubject:"",
+  component:"",
+  data:"",
+  snapshot:{
+    params:{id:4}
+  }
+}
+*/
   }
 
   ngDoCheck(): void {
