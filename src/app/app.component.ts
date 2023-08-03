@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SampleService } from './service/sample.sevice';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -16,5 +17,9 @@ export class AppComponent {
     console.log('-->>>>>>>>' + this.sampleService.getData());
     this.sampleService.setData('xyz');
     console.log('After set data-->>>>>>>>' + this.sampleService.getData());
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form);
   }
 }

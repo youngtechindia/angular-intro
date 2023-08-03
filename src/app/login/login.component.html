@@ -1,0 +1,34 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <fieldset>
+    <legend>Login</legend>
+
+    <div class="fields">
+      <label>User Name :</label
+      ><input type="text" ngModel name="uname" required #uname="ngModel" />
+      <br />
+      <span *ngIf="!uname.valid && uname.touched">User name Required</span>
+    </div>
+
+    <div class="fields">
+      <label>Email :</label
+      ><input
+        type="text"
+        ngModel
+        name="email"
+        required
+        email
+        #uname="ngModel"
+      />
+      <br />
+      <span *ngIf="!uname.valid && uname.touched">User name Required</span>
+    </div>
+
+    <div class="fields">
+      <label>Password :</label
+      ><input type="password" ngModel name="password" required />
+    </div>
+    <div class="fields">
+      <button type="submit">Login</button>
+    </div>
+  </fieldset>
+</form>

@@ -17,6 +17,8 @@ import { ListComponent } from './employee/list/list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NopageComponent } from './nopage/nopage.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const appRoutes: Routes = [
   {
@@ -30,6 +32,14 @@ const appRoutes: Routes = [
   {
     path: 'listEmployee/:id',
     component: ListComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
   },
   {
     path: '**',
@@ -50,6 +60,8 @@ const appRoutes: Routes = [
     ListComponent,
     NavbarComponent,
     NopageComponent,
+    LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

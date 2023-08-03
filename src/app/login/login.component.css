@@ -1,0 +1,20 @@
+form {
+  width: 50%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.fields {
+  margin: 10px;
+}
+label {
+  min-width: 100px;
+}
+
+input {
+  padding: 10px;
+}
+
+input.ng-invalid {
+  border-color: red;
+}
