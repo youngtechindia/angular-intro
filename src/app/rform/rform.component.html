@@ -1,0 +1,23 @@
+<form [formGroup]="signupForm">
+  <fieldset>
+    <legend>Login</legend>
+
+    <div class="fields">
+      <label>User Name :</label
+      ><input type="text" name="uname" formControlName="username" />
+      <br />
+    </div>
+
+    <div class="fields">
+      <label>Email :</label
+      ><input type="text" name="email" formControlName="email" />
+      <br />
+      <span>User name Required</span>
+    </div>
+
+    <div class="fields"><label>Password :</label><input type="password" /></div>
+    <div class="fields">
+      <button type="submit">Login</button>
+    </div>
+  </fieldset>
+</form>

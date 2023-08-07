@@ -28,6 +28,12 @@
     <span class="error-text" *ngIf="!email.valid && email.touched"
       >Please enter valid email</span
     >
+    <div>
+      <ng-container *ngFor="let gender of genders">
+        <label>{{ gender }}:</label
+        ><input type="radio" ngModel name="genders" [value]="gender" />
+      </ng-container>
+    </div>
 
     <label for="psw"><b>Password</b></label>
     <input

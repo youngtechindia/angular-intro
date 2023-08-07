@@ -1,7 +1,7 @@
 import { NgModule, createComponent } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WishComponent } from './wish/wish.component';
@@ -19,6 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NopageComponent } from './nopage/nopage.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { RformComponent } from './rform/rform.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 const appRoutes: Routes = [
   {
@@ -62,11 +64,14 @@ const appRoutes: Routes = [
     NopageComponent,
     LoginComponent,
     RegistrationComponent,
+    RformComponent,
+    ReactiveformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

@@ -1,0 +1,39 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <legend>Reactive Login Form</legend>
+
+    <div class="fields">
+      <label>User Name :</label
+      ><input type="text" name="uname" formControlName="username" />
+      <br />
+      <span
+        class="error"
+        *ngIf="
+          !loginForm.get('username').valid && loginForm.get('username').touched
+        "
+        >Enter valid username</span
+      >
+      <br />
+    </div>
+
+    <div class="fields">
+      <label>Email :</label
+      ><input type="text" name="email" formControlName="email" />
+      <br />
+      <span
+        class="error"
+        *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched"
+        >Enter valid email</span
+      >
+      <br />
+    </div>
+
+    <div class="fields">
+      <label>Password :</label
+      ><input type="password" name="password" formControlName="password" />
+    </div>
+    <div class="fields">
+      <button type="submit">Login</button>
+    </div>
+  </fieldset>
+</form>

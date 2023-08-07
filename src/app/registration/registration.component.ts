@@ -9,10 +9,11 @@ import { NgForm } from '@angular/forms';
 export class RegistrationComponent {
   @ViewChild('f') signupForm: any = {};
   submittedValues: any = null;
+  genders = ['male', 'female', 'others'];
 
   onSubmit() {
     console.log(this.signupForm);
     this.submittedValues = this.signupForm.value;
-    this.signupForm.reset();
+    //  this.signupForm.reset();
   }
 }
